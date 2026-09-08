@@ -1,4 +1,3 @@
-# FED-2026
 # Procesverslag
 Markdown is een simpele manier om HTML te schrijven.  
 Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
@@ -17,13 +16,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Auteur:
-  Abdennour el Faddali
-  
+  Sanne 't Hooft (vervangen door jouw naam)
+
   #### Je startniveau:
-  zwart
+  hier je startniveau (kies uit zwart, rood óf blauw)
 
   #### Je focus:
-  responsive
+  hier je focus (kies uit responsive óf surface plane)
  
 </details>
 
