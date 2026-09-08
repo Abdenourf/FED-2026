@@ -36,16 +36,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  https://order.dunkin.nl/startpage
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+ home page dunkin
+ 
+ <img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 15 49" src="https://github.com/user-attachments/assets/ac8f12aa-07d1-45cd-9673-d070cd85667f" />
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
- 
+  detailpagina
+  
+  <img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 16 20" src="https://github.com/user-attachments/assets/6c209b59-5b25-4cf7-abe0-b77ccaa171a3" />
+
 </details>
 
 
