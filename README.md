@@ -41,12 +41,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   #### Screenshot(s) van de eerste pagina (small screen): 
  home page dunkin
  
- <img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 15 49" src="https://github.com/user-attachments/assets/ac8f12aa-07d1-45cd-9673-d070cd85667f" />
+<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 17 15" src="https://github.com/user-attachments/assets/4b5b4072-be0b-4436-9a50-ef7bcea38817" />
+
 
   #### Screenshot(s) van de tweede pagina (small screen):
   detailpagina
   
-  <img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 16 20" src="https://github.com/user-attachments/assets/6c209b59-5b25-4cf7-abe0-b77ccaa171a3" />
+<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 17 25" src="https://github.com/user-attachments/assets/0da359da-f7b0-4f1a-8953-a7d468af9dc4" />
+
 
 </details>
 
