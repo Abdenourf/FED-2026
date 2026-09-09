@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="jouw naam">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dunkin' - online bestellen</title>
+
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.png">
+</head>
+
+<!charset="UTF-8" — zorgt dat speciale tekens (é, ë, emoji) goed worden weergegeven//>
+
+<body>
+
+    <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
+
+    <header class="site-header">
+        <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+        <a href="index.html" class="logo">
+            <img src="images/dunkin-logo.png" alt="Dunkin' homepage">
+        </a>
+
+        <nav class="header-actions" aria-label="Account en winkelwagen">
+            <button class="store-picker">
+                <span class="visually-hidden">Gekozen winkel: </span>Amsterdam CS
+            </button>
+            <button class="icon-btn" aria-label="Zoeken">🔍</button>
+            <button class="icon-btn" aria-label="Favorieten">♡</button>
+            <button class="icon-btn cart-btn" aria-label="Winkelwagen, 5 items">
+                🛒 <span class="badge">5</span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <section class="hero" aria-labelledby="hero-title">
+            <h1 id="hero-title">Made to make you smile</h1>
+            <p>Sip. Bite. Smile. Repeat.</p>
+
+            <div class="order-type">
+                <button type="button" class="toggle-btn" data-order-type="bezorging">🚚 Bezorging</button>
+                <button type="button" class="toggle-btn active" data-order-type="afhalen" aria-pressed="true">🛍️ Afhalen</button>
+            </div>
+
+            <form class="address-form" action="#">
+                <label for="address" class="visually-hidden">Adres</label>
+                <input type="text" id="address" name="address" value="Amsterdam Warmoesstraat, 167, 1012JC">
+                <button type="submit">Let's go</button>
+            </form>
+        </section>
+
+        <section class="store-info" aria-labelledby="store-title">
+            <h2 id="store-title">Jouw winkel</h2>
+            <p>📍 Stationsplein 13e, 1012AB Amsterdam</p>
+
+            <table class="opening-hours">
+                <caption class="visually-hidden">Openingstijden</caption>
+                <tbody>
+                    <tr><th scope="row">Maandag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Dinsdag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Woensdag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Donderdag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Vrijdag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Zaterdag</th><td>07:00 - 22:00</td></tr>
+                    <tr><th scope="row">Zondag</th><td>07:00 - 22:00</td></tr>
+                </tbody>
+            </table>
+
+            <p><a href="mailto:csgroot@dunkindonuts.nl">csgroot@dunkindonuts.nl</a></p>
+
+            <a href="#" class="btn-outline">Bestel nu →</a>
+
+            <img src="images/kaart.png" alt="Kaart met de locatie van Dunkin' bij Amsterdam Centraal Station" class="store-map">
+        </section>
+
+        <section class="perks" aria-labelledby="perks-title">
+            <h2 id="perks-title">Uw accountvoordelen</h2>
+            <p>Met een account krijg je toegang tot een scala aan geweldige voordelen</p>
+
+            <ul class="perks-list">
+                <li>
+                    <span aria-hidden="true">👤</span>
+                    <h3>Maak uw account aan</h3>
+                    <p>Maak een account aan om van de voordelen te profiteren.</p>
+                    <a href="#">Meld u gratis aan →</a>
+                </li>
+                <li>
+                    <span aria-hidden="true">⭐</span>
+                    <h3>Verdien bonuspunten</h3>
+                    <p>Ontvang bonuspunten bij elke bestelling.</p>
+                    <a href="#">Meer informatie →</a>
+                </li>
+                <li>
+                    <span aria-hidden="true">♥</span>
+                    <h3>Bewaar uw favorieten</h3>
+                    <p>Bewaar eenvoudig je favoriete items, zodat je ze altijd terug kunt vinden.</p>
+                    <a href="#">Begin met sparen →</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="socials" aria-labelledby="socials-title">
+            <h2 id="socials-title">Volg ons op</h2>
+            <ul class="social-list">
+                <li><a href="#" class="social-link facebook">Facebook</a></li>
+                <li><a href="#" class="social-link instagram">Instagram</a></li>
+                <li><a href="#" class="social-link tiktok">TikTok</a></li>
+                <li><a href="#" class="social-link linkedin">LinkedIn</a></li>
+            </ul>
+
+            <div class="app-promo">
+                <h3>Download onze app</h3>
+                <p>Houd je favoriete eten binnen handbereik.</p>
+                <a href="#"><img src="images/appstore.png" alt="Download in de App Store"></a>
+                <a href="#"><img src="images/googleplay.png" alt="Ontvang het op Google Play"></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <img src="images/dunkin-logo.png" alt="Dunkin'" class="footer-logo">
+
+        <ul class="social-list small">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+
+        <nav aria-label="Juridische informatie">
+            <ul class="legal-list">
+                <li><a href="#">Data privacy</a></li>
+                <li><a href="#">Impressie</a></li>
+                <li><a href="#">Algemene voorwaarden</a></li>
+                <li><a href="#">Accountbeheer</a></li>
+                <li><a href="#">Cookie instellingen</a></li>
+                <li><a href="#">Toegankelijkheidsverklaring</a></li>
+            </ul>
+        </nav>
+
+        <p>© 2026 Dunkin NL</p>
+    </footer>
+
+    <script defer src="scripts/script.js"></script>
+</body>
+
+</html>
+
+
+<!-- TOEGANKELIJKHEIDSVERBETERINGEN T.O.V. ORIGINELE SITE
+
+1. Zoomen kan niet
+   - Code: geen user-scalable=no en geen maximum-scale=1 in de viewport meta-tag
+   - Resultaat: gebruikers kunnen weer normaal in- en uitzoomen
+
+2. Kan niet zien zien waar je bent als je met Tab navigeert
+   - Code: :focus-visible { outline: ... } in de CSS
+   - Resultaat: gekleurde rand om het element waar je met Tab op staat
+
+3.  Kan niet direct naar de inhoud springen zonder eerst door het hele menu te tabben
+   - Code: <a class="skip-link" href="#main">Ga naar hoofdinhoud</a> bovenaan de pagina
+   - Resultaat: 1x Tab + Enter en je slaat het hele menu over
+
+4.  Kan niet weten wat een knop met alleen een icoontje doet (bijv. 🛒) zonder de knop zien
+   - Code: aria-label="Winkelwagen, 5 items" op de knop
+   - Resultaat: screenreader zegt hardop "Winkelwagen, 5 items" i.p.v. niks
+
+5.  Kan niet weten wat er op een afbeelding staat zonder het te kunnen zien
+   - Code: alt="Kaart met de locatie van Dunkin' bij Amsterdam CS" op de <img>
+   - Resultaat: screenreader leest de tekst voor, of je ziet 'm als de afbeelding niet laadt
+
+6. screenreader kan niet weten dat de openingstijden bij elkaar horen
+   - Code: echte <table> met <th scope="row"> i.p.v. losse tekstregels
+   - Resultaat: screenreader zegt "Maandag, 07:00-22:00" als samenhangend geheel -->
