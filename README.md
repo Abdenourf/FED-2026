@@ -61,6 +61,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  
+  - Inzoomen is uitgeschakeld door user-scalable=no en maximum-scale=1.0.
+  - Er is geen duidelijke zichtbare focusstijl bij navigeren met het toetsenbord.
+  - De focusvolgorde met Tab is niet logisch.
+  - Er is geen horizontale scroll op mobiel; de content blijft binnen het scherm.
+  - De headingstructuur is niet logisch opgebouwd en heading levels worden overgeslagen.
+  - Niet alle afbeeldingen hebben een goede alt-tekst.
+  - Er is geen video of audio aanwezig, dus media-eisen zijn niet van toepassing.
+  - Er is geen skip link aanwezig.
+  - Er is geen dark mode
+  - prefers-reduced-motion wordt niet ondersteund.
+  
+  - Positief: de pagina gebruikt wel een taal-attribuut en een paginatitel.
 
 </details>
 
