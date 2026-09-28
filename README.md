@@ -40,14 +40,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
  home page tonyschonolonely 
- 
-<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 17 15" src="https://github.com/user-attachments/assets/4b5b4072-be0b-4436-9a50-ef7bcea38817" />
+
+<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-28 om 23 43 23" src="https://github.com/user-attachments/assets/19c5252e-192f-4d56-abba-99a80cbaa997" />
+
 
 
   #### Screenshot(s) van de tweede pagina (small screen):
   detailpagina
-  
-<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 17 25" src="https://github.com/user-attachments/assets/0da359da-f7b0-4f1a-8953-a7d468af9dc4" />
+
+<img width="1470" height="956" alt="Scherm­afbeelding 2026-09-28 om 23 43 43" src="https://github.com/user-attachments/assets/ed315aaf-e47f-43ee-b3c5-f7d7491e904d" />
 
 
 </details>
@@ -72,8 +73,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   - Er is geen skip link aanwezig.
   - Er is geen dark mode
   - prefers-reduced-motion wordt niet ondersteund.
-  
-  - Positief: de pagina gebruikt wel een taal-attribuut en een paginatitel.
 
 </details>
 
