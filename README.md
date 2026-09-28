@@ -244,8 +244,30 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. nl.tonyschocolonely.com – het origineel
+  2. codepen.io/shooft/pen/JjQLVeB – "FED 24/25 - JS - hamburger buttons"
+  3. FED 25/26 – Oefening JS 3-stap – 2 Hamburger menu (PDF) – van de HvA DLO
+  4. SVG's van nl.tonyschocolonely.com – boon, vergrootglas, account en tas
+  5. WCAG 2.2 (w3.org/WAI) – contrasteisen (4,5:1 en 3:1 voor grote tekst) en 1.3.5 autocomplete
+  6. MDN Web Docs (developer.mozilla.org) – als naslag voor aria-expanded, aria-label, aria-hidden, clip-path, grid-template-areas, subgrid, container units (cqi), prefers-reduced-motion, @font-face
+  7. claude.ai
+  8. developer.mozilla.org → pagina's over SVG <path> en het d
+  9. Flexbox (header, carrousel, impact-kolommen)
+Learn flexbox the easy way: https://www.youtube.com/watch?v=u044iM9xsWU
+  10. CSS Grid (nieuws, reviews, teaser, belofte)
+Learn CSS Grid the Easy Way: onder andere display grid, gap, kolommen laten overspannen, media queries en grid-template-areas
+https://www.youtube.com/watch?v=rg7Fvvl3taU 
+Class Central
+11. grid-template-areas (productkaarten)
+Why grid-template-areas are amazing (short): https://www.youtube.com/watch?v=sYDQBfSQFRI
+12.clamp() (grote koppen die meegroeien)
+min(), max(), and clamp() are CSS magic!: https://www.youtube.com/watch?v=U9VF-4euyRo
+13.Eenheden: rem, em, vw, ch
+Are you using the right CSS units?: https://youtu.be/veEqYQlfNx8 
+Answer Overflow
+14. Custom properties (je kleuren in :root)
+CSS Variables, an introduction to CSS custom properties: https://www.youtube.com/watch?v=PHO6TBq_auI
+15. Master CSS Custom Properties, over meer dan alleen de :root, zoals lokale custom properties en fallbacks (dat gebruik je bij --card-bg): https://www.youtube.com/watch?v=40K1pvxEwlE
+
 
 </details>
