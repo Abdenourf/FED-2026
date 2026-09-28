@@ -36,10 +36,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://order.dunkin.nl/startpage
+  https://nl.tonyschocolonely.com/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
- home page dunkin
+ home page tonyschonolonely 
  
 <img width="1470" height="956" alt="Scherm­afbeelding 2026-09-08 om 16 17 15" src="https://github.com/user-attachments/assets/4b5b4072-be0b-4436-9a50-ef7bcea38817" />
 
@@ -111,20 +111,19 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  | Abdennour      | Lois            | Michelle   |       student 4        
+  | ---            | ---             | ---          | ---              
+  | Nieuwe website | breakdown schets| breakdown schets   |
+  | kiezen en break| bespreken        | bespreken.        |
+  down maken.      |                  |                   |             
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - nieuwe website kiezen
+  - breakdown maken en wcag checklist
+  - 2 html pagina's
 
 </details>
 

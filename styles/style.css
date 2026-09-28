@@ -1,10 +1,33 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+/* formulierelementen erven het lettertype niet vanzelf */
+button,
+input,
+select {
+    font: inherit;
+}
 
 
 
@@ -13,19 +36,1354 @@
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+
+/* eigen lettertype van Tony's, voor de koppen */
+@font-face {
+    font-family: "Chocolate letter";
+    src: url("../fonts/chocolateletter.woff") format("woff");
+    font-display: swap;
 }
 
+:root {
+    --color-text: #1a1a1a;
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-card-background: #f7f7f7;
+    --color-text-muted: #595959;
 
+    --color-primary: #ed0100;
+    --color-blue: #006BE1;
 
+    /* Geel: bevestigd via data-background-color="#ffe000" op de originele site */
+    --color-yellow: #FFE000;
+    /* Knopgeel: */
+    --color-button: #FFE000;
+    /* Groen: */
+    --color-green: #009E00;
+    /* Oranje: */
+    --color-orange: #FFAA2D;
+
+    --color-page-product: var(--color-yellow);
+    --focus-ring: 3px solid #0057ff;
+
+    --font-body: "American Typewriter", serif;
+    --font-heading: "Chocolate letter", "American Typewriter", serif;
+    --radius-button: 0;
+
+    --space-small: clamp(0.5rem, 1vw, 0.75rem);
+    --space-normal: clamp(1rem, 2vw, 1.5rem);
+    --space-large: clamp(1.5rem, 4vw, 3rem);
+
+    /* Inhoud krijgt een maximale breedte, achtergronden blijven full-width.
+     Op smalle schermen is de zijruimte --space-normal, op brede schermen
+     groeit ze mee zodat de inhoud gecentreerd blijft. Geen media query nodig. */
+
+     /* clamp = min-liefst-max ----- rem gebruiken voor pixels. rem is responsive */ 
+
+    --content-width: 80rem;
+    --page-padding: max(var(--space-normal), (100% - var(--content-width)) / 2);
+}
+
+/* donker thema: volgt de instelling van het apparaat */
+/*variabelen voor kleuren in donker thema, zodat de site ook in donker thema goed leesbaar blijft. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #f2f2f2;
+        --color-text-muted: #b3b3b3;
+        --color-background: #1a1a1a;
+        --color-surface: #2a2a2a;
+        --color-card-background: #2a2a2a;
+        --color-page-product: #1a1a1a;
+    }
+}
 
 
 /****************/
 /* JOUW STYLING */
 /****************/
 
-/* jouw code */
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-background);
+    line-height: 1.5;
+}
 
+/* de productpagina heeft een gele achtergrond met witte kaarten erop */
+body:has(.product-detail) {
+    background: var(--color-page-product);
+}
+
+h1,
+h2,
+h3 {
+
+    line-height: 1.15;
+    margin: 0 0 var(--space-small);
+}
+
+h1,
+h2 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+h3 {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+}
+
+p {
+    margin: 0 0 var(--space-small);
+}
+
+a {
+    color: var(--color-primary);
+}
+
+/* screenreader-only tekst */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* zichtbare focusstijl voor toetsenbordgebruikers.
+   De witte ring erbinnen zorgt dat de blauwe rand ook op rood en geel
+   goed zichtbaar blijft (blauw op rood alleen is te laag contrast). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+/* skip-link: onzichtbaar totdat hij focus krijgt */
+body > a:first-child {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 0.5em 1em;
+    z-index: 100;
+    text-decoration: none;
+}
+
+body > a:first-child:focus {
+    top: 0;
+}
+
+/* Herbruikbare knop-stijlen */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: var(--radius-button);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    background: var(--color-button);
+    color: #1a1a1a;
+}
+
+/* ===== HAMBURGERMENU (mobiel) ===== */
+
+/* de knop */
+.menu-toggle {
+    position: relative;
+    z-index: 11; /* boven het menu, zodat je hem ook kunt sluiten */
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    margin-right: auto;
+    order: -1; /* knop links, logo rechts */
+}
+
+.menu-toggle svg {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* hamburger of kruisje tonen */
+.menu-toggle svg:last-of-type {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] svg:first-of-type {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] svg:last-of-type {
+    display: block;
+}
+
+/* het menu: standaard links buiten beeld */
+#hoofdmenu {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: 5rem 1.5rem 2rem;
+    overflow-y: auto;
+    background-color: var(--color-green);
+    translate: -100% 0;
+    visibility: hidden;
+    transition: translate 0.3s ease, visibility 0.3s;
+}
+
+/* het menu open (deze class zet je JS erop) */
+#hoofdmenu.toonMenu {
+    translate: 0 0;
+    visibility: visible;
+}
+
+/* menulinks op groen: altijd donker, ook in donker thema (contrast) */
+#hoofdmenu a {
+    color: #1a1a1a;
+}
+
+#hoofdmenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* geen schuif-animatie voor wie dat heeft uitgezet */
+@media (prefers-reduced-motion: reduce) {
+    #hoofdmenu {
+        transition: none;
+    }
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-small);
+    padding-block: var(--space-small);
+    padding-inline: var(--page-padding);
+    border-bottom: 1px solid #0000001a;
+}
+
+body:not(:has(.product-detail)) header {
+    background: var(--color-primary);
+    border-bottom: none;
+}
+
+header nav[aria-label="Hoofdmenu"] ul {
+    flex-wrap: wrap;
+}
+
+header nav[aria-label="Hoofdmenu"] a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+header > div {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+header > div button,
+header > div a {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+/* alle icoontjes in de header even groot */
+header > div svg {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+/* tas: hengsel en tas op elkaar gestapeld */
+header > div span {
+    position: relative;
+    display: block;
+    width: 1.5rem;
+    height: 1.3rem;
+    margin-top: 0.15rem;
+}
+
+header > div span svg {
+    position: absolute;
+}
+
+header > div span svg:last-child {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header > div span svg:first-child {
+    left: 50%;
+    top: -0.6rem;
+    width: 1rem;
+    height: 0.75rem;
+    transform: translateX(-50%);
+}
+
+/* het uitgesneden cijfer in de tas */
+header > div span svg:last-child text {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* ===== BROODKRUIMELPAD ===== */
+.product-detail nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    font-size: 0.9rem;
+}
+
+/* donkere tekst: grijs (#666) haalt op geel geen 4,5:1 contrast */
+.product-detail nav a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.product-detail nav li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5em;
+}
+
+/* ===== SECTIES — algemene basisruimte =====
+   Alleen directe kinderen van main: geneste secties (zoals de accordion
+   in de productpagina) krijgen zo geen dubbele padding. */
+main>section {
+    padding-block: var(--space-large);
+    padding-inline: var(--page-padding);
+}
+
+section>p {
+    max-width: 65ch;
+}
+
+/* ===== HERO — flexbox, wrapt vanzelf op smal scherm ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    align-content: center;
+    gap: var(--space-large);
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.hero h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2rem, 10vw, 4.5rem);
+    line-height: 1;
+}
+
+.hero p {
+    color: #1a1a1a;
+}
+
+.hero .btn-primary {
+    display: block;
+    width: fit-content;
+    margin-top: var(--space-small);
+    margin-inline: auto;
+}
+
+/* ===== PRODUCTEN — CSS Grid met auto-fit, past zich vanzelf aan ===== */
+.products h2 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2.5rem, 11vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+/* "Tony's" op een eigen regel en groter, zoals het origineel */
+.products h2 span {
+    display: block;
+    font-size: 1.4em;
+}
+
+.products>p {
+    text-align: center;
+    font-weight: bold;
+    margin-inline: auto;
+}
+
+.products > div {
+    display: flex;
+    align-items: center;
+    gap: var(--space-small);
+    margin-bottom: var(--space-normal);
+    justify-content: center;
+}
+
+.products > div button {
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    background: var(--color-button);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.products ul {
+    display: flex;
+    gap: var(--space-normal);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-small);
+}
+
+/* kaart: afbeelding bovenaan, titel links met + rechts ernaast */
+.products li {
+    flex: 0 0 min(75%, 22rem);
+    min-width: 0;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "img   img"
+        "title btn"
+        "meta  btn"
+        "price btn";
+    column-gap: var(--space-small);
+    align-items: start;
+    align-content: start;
+}
+
+.products li img {
+    grid-area: img;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    padding: var(--space-normal);
+    background: var(--card-bg, var(--color-card-background));
+    margin-bottom: var(--space-small);
+}
+
+.products li h3 {
+    grid-area: title;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    margin: 0;
+}
+
+.products li p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.products li p:first-of-type {
+    grid-area: meta;
+    color: var(--color-text-muted);
+}
+
+.products li p:last-of-type {
+    grid-area: price;
+    font-weight: bold;
+}
+
+.products li button {
+    grid-area: btn;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-button);
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== PERSONALISATIE-TEASER — flexbox, wrapt vanzelf ===== */
+.personalization-teaser {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-large);
+    align-items: center;
+    background: var(--color-orange);
+    color: #1a1a1a; /* altijd donker op oranje, ook in donker thema */
+}
+
+.personalization-teaser > div,
+.personalization-teaser img {
+    flex: 1 1 300px;
+}
+
+/* kop is visueel klein, maar blijft een h2 voor de paginastructuur */
+.personalization-teaser h2 {
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.personalization-teaser > div p {
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.personalization-teaser > div .btn-secondary {
+    display: block;
+    width: fit-content;
+    margin: var(--space-normal) auto 0;
+    font-size: 1.25rem;
+}
+
+
+
+/* ===== ONZE BELOFTE ===== */
+.promise {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.promise h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2.5rem, 11vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+.promise > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-large);
+    align-items: center;
+}
+
+.promise > div > div,
+.promise > div img {
+    flex: 1 1 300px;
+}
+
+/* vet en minstens 1.2rem = "grote tekst" volgens WCAG,
+   daardoor is 3:1 contrast genoeg voor donkere tekst op rood */
+.promise > div > div p {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.promise > div > div .btn-secondary {
+    display: block;
+    width: fit-content;
+    margin: var(--space-normal) auto 0;
+    font-size: 1.25rem;
+}
+
+/* ===== CHOCO VOOR BEDRIJVEN — grid, past zich vanzelf aan ===== */
+.business {
+    background: var(--color-blue);
+    color: #ffffff;
+}
+
+.business h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2.5rem, 11vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+.business ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--space-normal);
+}
+
+/* witte kaarten, alles gecentreerd */
+.business ul li {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: var(--space-normal);
+    text-align: center;
+}
+
+.business ul img {
+    margin-bottom: var(--space-small);
+}
+
+.business ul h3 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+.business ul p {
+    font-weight: bold;
+}
+
+.business ul .btn-secondary {
+    margin-top: var(--space-small);
+    font-size: 1.25rem;
+}
+
+/* ===== NIEUWTJES ===== */
+.news h2 {
+    color: var(--color-blue);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 17vw;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-normal);
+    /* nieuw */
+    white-space: nowrap;
+}
+
+.news>p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-inline: auto;
+    max-width: 45ch;
+    /* nieuw: smallere tekst, zoals het origineel */
+}
+
+.news ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-large) var(--space-normal);
+    /* nieuw: meer ruimte tussen de rijen */
+    margin-block: var(--space-large);
+    /* nieuw: meer ruimte boven en onder het grid */
+}
+
+.news ul img {
+    margin-bottom: var(--space-small);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+}
+
+.news li p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25em 0.75em;
+    font-size: 0.85rem;
+}
+
+.news li span {
+    background: var(--color-yellow);
+    color: #1a1a1a;
+    padding: 0.1em 0.4em;
+}
+
+.news ul h3 {
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+}
+
+.news>.btn-secondary {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+/* ===== REVIEWS ===== */
+.reviews {
+    background: var(--color-primary);
+}
+
+.reviews h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2.5rem, 12vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-large);
+}
+
+/* extra ruimte opzij, zodat de ballon-puntjes er nog naast passen */
+.reviews ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-large);
+    padding-inline: var(--space-large);
+}
+
+/* witte tekstballon */
+.reviews ul li {
+    position: relative;
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: var(--space-normal);
+    text-align: center;
+    transform: rotate(-1deg);
+}
+
+/* om en om iets anders gedraaid, zoals het origineel */
+.reviews ul li:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+/* het puntje van de ballon: een driehoek links (decoratief, geen inhoud) */
+.reviews ul li::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: -1.5rem;
+    width: 1.6rem;
+    height: 2.5rem;
+    background: #ffffff;
+    clip-path: polygon(100% 0, 100% 60%, 0 100%);
+}
+
+/* bij de even ballonnen zit het puntje rechts */
+.reviews ul li:nth-child(even)::before {
+    left: auto;
+    right: -1.5rem;
+    clip-path: polygon(0 0, 0 60%, 100% 100%);
+}
+
+.reviews ul figure,
+.reviews ul blockquote {
+    margin: 0;
+}
+
+.reviews figcaption p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.reviews figcaption img {
+    height: 2.5em;
+    width: auto;
+    margin: 0 auto var(--space-small);
+}
+
+.reviews ul blockquote p {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ===== NIEUWSBRIEF ===== */
+.newsletter {
+    background: var(--color-primary);
+    color: #ffffff;
+    text-align: center;
+    padding-top: clamp(3rem, 10vw, 6rem);
+}
+
+.newsletter h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: clamp(2.5rem, 11vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+}
+
+/* "missie" op een eigen regel en groter, zoals het origineel */
+.newsletter h2 span {
+    display: block;
+    font-size: 1.6em;
+}
+
+.newsletter form div {
+    position: relative;
+}
+
+.newsletter form div input {
+    width: 100%;
+    min-width: 0;
+    padding: 1.75em 1em 0.75em;
+    border: none;
+    border-radius: var(--radius-button);
+    color: #1a1a1a;
+}
+
+.newsletter form div label {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    pointer-events: none;
+    transition: top 0.15s ease, font-size 0.15s ease;
+}
+
+.newsletter form div input:focus+label,
+.newsletter form div input:not(:placeholder-shown)+label {
+    top: 0.9em;
+    font-size: 0.75rem;
+    transform: translateY(0);
+}
+
+.newsletter form {
+    display: grid;
+    gap: var(--space-small);
+    max-width: 40rem;
+    margin: var(--space-normal) auto 0;
+}
+
+/* vet en 1.2rem = "grote tekst", daardoor is donker op rood genoeg contrast */
+.newsletter p {
+    margin: 0 auto;
+    max-width: 40ch;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #1a1a1a;
+}
+
+/* ===== PRODUCT-DETAIL PAGINA =====
+   Twee kolommen zonder media query (het "sidebar"-patroon):
+   - .product-sidebar wil 25rem breed zijn en groeit nauwelijks
+   - .product-gallery krijgt alle overige ruimte, maar minstens 50%
+   Past het niet, dan wrapt de sidebar onder de galerij. */
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-normal);
+    padding-block: var(--space-normal) var(--space-large);
+}
+
+.product-detail > div:first-child {
+    flex: 999 1 0;
+    min-width: 50%;
+    display: flex;
+    gap: var(--space-small);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.product-detail > div:first-child img {
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    scroll-snap-align: start;
+}
+
+.product-detail > div:last-child {
+    flex: 1 1 25rem;
+    display: grid;
+    gap: var(--space-small);
+}
+
+.product-detail > div > div {
+    background: var(--color-surface);
+    padding: var(--space-normal);
+}
+
+.product-detail > div > div>* {
+    margin: 0;
+}
+
+.product-detail > div > div>*+* {
+    margin-top: var(--space-small);
+}
+
+.product-detail > div > div h1 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: clamp(3rem, 22vw, 6.5rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
+.product-detail h1 + div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 var(--space-normal);
+}
+
+.product-detail h1 + div p {
+    margin: 0;
+}
+
+.product-detail > div > div p {
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.product-detail > div > div .btn-primary {
+    display: block;
+    width: 100%;
+    padding-block: 1em;
+    text-align: center;
+}
+
+.product-detail h1 ~ ul {
+    display: grid;
+    gap: 0.5rem;
+    width: fit-content;
+    margin-block: var(--space-normal) 0;
+    margin-inline: auto;
+}
+
+.product-detail h1 ~ ul li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+}
+
+/* het vinkje is decoratief: lege alternatieve tekst na de slash */
+.product-detail h1 ~ ul li::before {
+    content: "✔";
+    content: "✔" / "";
+    flex: none;
+    color: var(--color-green);
+}
+
+/* ===== UITKLAPBARE PRODUCTDETAILS (accordion) =====
+   Elk item is een eigen kaart met de gele pagina ertussen. */
+.product-accordion {
+    display: grid;
+    gap: var(--space-small);
+}
+
+.product-accordion details {
+    background: var(--color-surface);
+    padding: var(--space-normal);
+}
+
+.product-accordion summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-small);
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+}
+
+.product-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+/* chevron wijst naar links (dicht) en naar beneden (open), zoals het origineel */
+.product-accordion summary::after {
+    content: "‹";
+    content: "‹" / "";
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.product-accordion details[open] summary {
+    margin-bottom: var(--space-small);
+}
+
+.product-accordion details[open] summary::after {
+    transform: rotate(-90deg);
+}
+
+.product-accordion h3 {
+    font-size: 1.1rem;
+    margin-top: var(--space-small);
+}
+
+.product-accordion table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-small) 0;
+}
+
+.product-accordion th,
+.product-accordion td {
+    text-align: left;
+    padding: 0.4em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ===== IMPACT-SECTIE =====
+   Twee kolommen die elk los stapelen:
+   links "31" + boon, rechts kop + tekst.
+   Donkere tekst op groen (4,9:1), wit haalt maar 3,6:1. */
+.impact {
+    padding-block: 0;
+}
+
+.impact > div {
+    background: var(--color-green);
+    color: #1a1a1a;
+    padding: var(--space-normal) calc(var(--space-normal) / 2) var(--space-normal) var(--space-normal);
+    display: grid;
+    grid-template-columns: 40% minmax(0, 1fr);
+    column-gap: 1rem;
+    clip-path: polygon(0 0, 100% 1.5%, 100% 100%, 0 100%);
+}
+
+.impact > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+}
+
+.impact p:first-child {
+    margin: 0;
+    font-family: var(--font-heading);
+    color: #ffffff;
+    line-height: 0.85;
+    font-size: calc(35vw - 2rem);
+}
+
+.impact h2 {
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    font-size: calc(15vw - 0.8rem);
+}
+
+.impact svg {
+    width: 100%;
+    height: auto;
+    color: #ffffff;
+}
+
+.impact h2 + p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.impact a {
+    color: #ffffff;
+}
+
+.product-detail + div {
+    background: var(--color-surface);
+    padding: var(--space-normal) var(--page-padding);
+}
+
+.product-detail + div .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-block: 1em;
+}
+
+/* ===== FOOTER — grid met auto-fit =====
+   Zelfde rood als de nieuwsbrief, zoals in het origineel. Witte tekst
+   (4,9:1) i.p.v. zwarte tekst (4,3:1) op dit rood. */
+footer {
+    padding-block: var(--space-large);
+    padding-inline: var(--page-padding);
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+footer nav[aria-label="Footer navigatie"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: var(--space-normal);
+    margin-bottom: var(--space-large);
+}
+
+footer nav h3,
+footer > div h3 {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+}
+
+footer nav li {
+    margin-bottom: 0.4em;
+}
+
+footer nav a,
+footer > div a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+footer nav a:hover,
+footer > div a:hover {
+    text-decoration: underline;
+}
+
+footer > div:has(> div) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-normal);
+    margin-bottom: var(--space-normal);
+}
+
+footer > div ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-small);
+}
+
+footer > div > div:last-child {
+    display: flex;
+    gap: var(--space-small);
+    align-items: center;
+}
+
+footer > div > div:last-child img {
+    height: 2.5em;
+    width: auto;
+}
+
+footer>p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ===== DESKTOP (vanaf 56rem) =====
+   Mobiel blijft zoals het is, dit past alleen breed scherm aan. */
+@media (min-width: 56rem) {
+
+        /* hamburgermenu: op desktop gewoon een gewone nav */
+    .menu-toggle {
+        display: none;
+    }
+
+    #hoofdmenu {
+        position: static;
+        padding: 0;
+        overflow: visible;
+        background-color: transparent;
+        translate: none;
+        visibility: visible;
+        transition: none;
+    }
+
+    #hoofdmenu ul {
+        flex-direction: row;
+    }
+
+    /* op desktop staat het menu in de header, dan gewoon de tekstkleur */
+    #hoofdmenu a {
+        color: var(--color-text);
+    }
+
+    /* reviews: kop over de volle breedte */
+    .reviews h2 {
+        font-size: 8vw;
+        white-space: nowrap;
+    }
+
+    /* 2 ballonnen naast elkaar, met ruimte ertussen voor de puntjes */
+    .reviews ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-large) 5rem;
+        padding-inline: 4rem;
+        align-items: start;
+    }
+
+    .reviews ul li {
+        padding: var(--space-large);
+    }
+
+    .reviews figcaption p {
+        font-size: 1.5rem;
+    }
+
+    .reviews ul blockquote p {
+        font-size: 1.4rem;
+    }
+
+    /* grotere puntjes */
+    .reviews ul li::before {
+        left: -3rem;
+        width: 3.2rem;
+        height: 4.5rem;
+    }
+
+    .reviews ul li:nth-child(even)::before {
+        right: -3rem;
+    }
+
+    /* onze belofte: kop over de volle breedte */
+    .promise h2 {
+        font-size: 12.5vw;
+        white-space: nowrap;
+    }
+
+    /* tekst links, afbeelding rechts */
+    .promise > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .promise > div > div {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .promise > div img {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    /* personalisatie: tekst links, foto rechts */
+    .personalization-teaser {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-inline: 8%;
+    }
+
+    .personalization-teaser h2 {
+        font-size: 1.6rem;
+    }
+
+    .personalization-teaser > div p {
+        font-weight: normal;
+        font-size: 1.2rem;
+    }
+
+    .personalization-teaser > div .btn-secondary {
+        margin-inline: 0;
+        font-size: 1.5rem;
+    }
+
+    /* iets meer dan 4 kaarten in beeld, zodat je ziet dat je kunt scrollen */
+    .products li {
+        flex-basis: 23%;
+    }
+
+    .products>p {
+        font-size: 1.5rem;
+        max-width: 45ch;
+    }
+
+    .products > div button {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .products > div .btn-secondary {
+        font-size: 1.75rem;
+    }
+
+    .impact p:first-child {
+        font-size: 8.5rem;
+    }
+
+    .impact h2 {
+        font-size: 3.8rem;
+    }
+
+
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        min-height: 130vh;
+    }
+
+    .hero > div {
+        position: sticky;
+        top: 2rem;
+        text-align: center;
+    }
+
+    /* galerij: alle foto's groot onder elkaar in plaats van zijwaarts swipen */
+    .product-detail > div:first-child {
+        display: grid;
+        gap: var(--space-large);
+        align-content: start;
+        overflow: visible;
+        scroll-snap-type: none;
+        padding-inline: var(--space-large);
+        padding-top: 6rem;
+    }
+
+    .product-detail > div:first-child img {
+        aspect-ratio: auto;
+        width: 85%;
+        height: auto;
+        max-height: 26rem;
+        margin-inline: auto;
+    }
+
+    /* nieuwsbrief: tekst links, formulier rechts */
+    .newsletter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-normal) var(--space-large);
+        align-items: center;
+        text-align: left;
+    }
+
+
+    /* desktop: "steun onze missie" op één regel, over de volle breedte */
+    .newsletter h2 {
+        grid-column: 1 / -1;
+        font-size: 9vw;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .newsletter h2 span {
+        display: inline;
+        font-size: 1em;
+    }
+
+    /* productpagina: minder ruimte boven de nieuwsbrief */
+    body:has(.product-detail) .newsletter {
+        padding-top: var(--space-normal);
+    }
+
+
+    .newsletter p {
+        margin: 0;
+    }
+
+    .newsletter form {
+        max-width: none;
+        margin-inline: 0;
+    }
+
+    body:not(:has(.product-detail)) .newsletter h2 {
+        font-size: 7vw;
+    }
+
+    /* de losse "in m'n tassie"-balk hoort alleen bij mobiel */
+    .product-detail + div {
+        display: none;
+    }
+}

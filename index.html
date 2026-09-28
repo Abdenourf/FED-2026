@@ -3,179 +3,404 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="jouw naam">
+    <meta name="author" content="Abdenour Elfaddali">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dunkin' - online bestellen</title>
+    <title>Tony's Chocolonely - Chocolade cadeaus met impact</title>
 
     <link href="styles/style.css" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="images/favicon.png">
 </head>
-
-<!charset="UTF-8" — zorgt dat speciale tekens (é, ë, emoji) goed worden weergegeven//>
 
 <body>
 
-    <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
+    <a href="#main">Ga naar hoofdinhoud</a>
 
-    <header class="site-header">
-        <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+<header>
+<button type="button" class="menu-toggle" aria-label="menu" aria-expanded="false" aria-controls="hoofdmenu">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M22.5712 4H0.857422V7.42849L22.5712 7.9999V4Z"></path>
+        <path d="M0.857422 20L1.42884 14.8573H22.5712L23.1426 19.4286L0.857422 20Z"></path>
+    </svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 4L20 20M20 4L4 20" stroke="currentColor" stroke-width="3" fill="none"></path>
+    </svg>
+</button>
 
-        <a href="index.html" class="logo">
-            <img src="images/dunkin-logo.png" alt="Dunkin' homepage">
-        </a>
+    
 
-        <nav class="header-actions" aria-label="Account en winkelwagen">
-            <button class="store-picker">
-                <span class="visually-hidden">Gekozen winkel: </span>Amsterdam CS
-            </button>
-            <button class="icon-btn" aria-label="Zoeken">🔍</button>
-            <button class="icon-btn" aria-label="Favorieten">♡</button>
-            <button class="icon-btn cart-btn" aria-label="Winkelwagen, 5 items">
-                🛒 <span class="badge">5</span>
-            </button>
+        <nav aria-label="Hoofdmenu" id="hoofdmenu">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="#">chocoshop</a></li>
+                <li><a href="#">gepersonaliseerd</a></li>
+                <li><a href="#">zakelijk</a></li>
+                <li><a href="#">onze belofte</a></li>
+                <li><a href="#">over Tony's</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
         </nav>
+
+        <div>
+            <button type="button" aria-label="Zoeken">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6401 17.9542L19.142 22L21.2408 20.9816L21.5454 19.3183L17.5173 15.2046L19.142 10.1808L16.2649 4.20643L9.35974 2L2.4545 6.92203V13.8808L6.78695 18.4294L14.6401 17.9542ZM9.94552 6.48983L6.20625 8.98267L6.62172 13.1374L9.11457 15.2148L14.1003 13.9684L14.9312 9.81362L12.4384 6.48983H9.94552Z"></path>
+    </svg>
+</button>
+            <a href="#" aria-label="Account">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <path d="M22.8389 14.2244C23.2432 17.2899 23.606 20.0148 24 22.9565H0V14.2244H22.8389Z"></path>
+                    <path
+                        d="M12.7516 1.04352C15.53 1.0332 17.9248 3.64459 17.8834 6.62757C17.8419 9.43508 15.5922 11.8504 13.0004 11.8607C10.0976 11.8607 6.27214 8.33065 6.2203 5.5954C6.17883 3.38655 9.51706 1.05384 12.7516 1.04352Z">
+                    </path>
+                </svg>
+            </a>
+            <a href="#" aria-label="Winkelwagen, 1 product">
+                <span>
+                    <svg viewBox="15 4.5 8.5 6.5" aria-hidden="true" focusable="false">
+                        <path fill="currentColor"
+                            d="M22.9,10.5c-0.1-1-0.2-1.9-0.3-2.9c-0.1-0.8-0.2-1.7-0.3-2.6h-7.7v5.6 M16.2,10.4V6.7 c1.5-0.1,3.1-0.2,4.8-0.3v4H16.2z">
+                        </path>
+                    </svg>
+                    <svg aria-hidden="true" focusable="false">
+                        <defs>
+                            <mask id="tas-mask" x="0" y="0" width="100%" height="100%">
+                                <rect fill="white" x="0" y="0" width="100%" height="100%"></rect>
+                                <text text-anchor="middle" x="50%" y="0" dy="77%">1</text>
+                            </mask>
+                        </defs>
+                        <rect mask="url(#tas-mask)" x="0" y="0" width="100%" height="100%" fill="currentColor"></rect>
+                    </svg>
+                </span>
+            </a>
+        </div>
     </header>
 
     <main id="main">
 
-        <section class="hero" aria-labelledby="hero-title">
-            <h1 id="hero-title">Made to make you smile</h1>
-            <p>Sip. Bite. Smile. Repeat.</p>
+        <!-- section: hero -->
+        <section class="hero">
+            <img src="images/tonys-bar-algemeen.png"
+                alt="Opengebroken Tony's Chocolonely reep, chocoladestukjes eromheen">
+            <div>
+                <h1>chocolade cadeaus met echte impact</h1>
+                <p>Het perfecte persoonlijke cadeau, of het nu is voor een verjaardag,
+                    bruiloft, Valentijnsdag, een bedankje of wat je verder nog kunt bedenken.
+                    Ontdek onze cadeau-ideeën.. voor chocofans en zakelijke klanten.</p>
+                <a href="#" class="btn-primary">hop.. naar alle chocolade</a>
+            </div>
+        </section>
 
-            <div class="order-type">
-                <button type="button" class="toggle-btn" data-order-type="bezorging">🚚 Bezorging</button>
-                <button type="button" class="toggle-btn active" data-order-type="afhalen" aria-pressed="true">🛍️ Afhalen</button>
+        <!-- section: producten -->
+        <section class="products" aria-labelledby="products-title">
+            <h2 id="products-title"><span>Tony's</span> Chocolonely</h2>
+            <p>..oftewel jouw favoriete winkel voor (h)eerlijke cadeaus. Kijk eens rond in onze chocoshop voor
+                cadeau-ideeën voor je moeder, je lieve collega's, je beste vriendin of gewoon voor jezelluf! Gratis
+                bezorgd vanaf €50,-.</p>
+
+            <div>
+                <button type="button" aria-label="Vorige producten">‹</button>
+                <button type="button" aria-label="Volgende producten">›</button>
+                <span>of</span>
+                <a href="#" class="btn-secondary">bekijk alle chocolade</a>
             </div>
 
-            <form class="address-form" action="#">
-                <label for="address" class="visually-hidden">Adres</label>
-                <input type="text" id="address" name="address" value="Amsterdam Warmoesstraat, 167, 1012JC">
-                <button type="submit">Let's go</button>
+            <ul>
+
+                <li style="--card-bg: #6B63B5;">
+                    <img src="images/topper-reep.png" alt="Je bent een topper reep, melk karamel zeezout, 180 gram">
+                    <h3>je bent een topper reep - melk karamel zeezout</h3>
+                    <p>180 gram, 1 reep</p>
+                    <p>€5,49 incl. BTW</p>
+                    <button type="button" aria-label="Voeg topper reep toe aan tassie">+</button>
+                </li>
+
+                <li style="--card-bg: #006BE1;">
+                    <img src="images/filled-alle-smaken.png"
+                        alt="Filled Tony's chocolade, drie repen in verschillende smaken">
+                    <h3>filled Tony's chocolade - alle smaken</h3>
+                    <p>389 gram, 3 repen</p>
+                    <p>€12,99 incl. BTW</p>
+                    <button type="button" aria-label="Voeg filled chocolade toe aan tassie">+</button>
+                </li>
+
+                <li style="--card-bg: #F07F2E;">
+                    <img src="images/karamel-zeezout.png" alt="Filled melkchocolade karamel zeezout crunch, 135 gram">
+                    <h3>filled melkchocolade karamel zeezout crunch</h3>
+                    <p>135 gram, 1 reep</p>
+                    <p>€4,39 incl. BTW</p>
+                    <button type="button"
+                        aria-label="Voeg karamel zeezout crunch toe aan tassie">+</button>
+                </li>
+
+                <li style="--card-bg: #4A9E2F;">
+                    <img src="images/proeverijtje.png" alt="Filled melkchocolade praline hazelnoot crunch, 127 gram">
+                    <h3>filled melkchocolade praline hazelnoot crunch</h3>
+                    <p>127 gram, 1 reep</p>
+                    <p>€4,39 incl. BTW</p>
+                    <button type="button"
+                        aria-label="Voeg praline hazelnoot crunch toe aan tassie">+</button>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- section: personalisatie-teaser -->
+        <section class="personalization-teaser" aria-labelledby="personalization-title">
+            <div>
+                <h2 id="personalization-title">Ja, ik wil.. gepersonaliseerde choco</h2>
+                <p>Op zoek naar bruiloftsbedankjes die écht indruk maken? Denk Fairtrade chocolade met jullie namen
+                    erop, traktaties voor op tafel en cadeautjes waar je gasten nog weken over praten.</p>
+                <a href="#" class="btn-secondary">bekijk onze wedding templates</a>
+            </div>
+            <img src="images/personalisatie-bruiloft.png"
+                alt="Gepersonaliseerde Tony's Chocolonely reep met namen erop, op een bruiloftstafel">
+        </section>
+
+        <!-- section: onze belofte -->
+        <section class="promise" aria-labelledby="promise-title">
+            <h2 id="promise-title">onze belofte</h2>
+            <div>
+                <img src="images/onze-belofte-vuist.png"
+                    alt="Illustratie van een vuist die een Tony's Chocolonely reep omhoog houdt">
+                <div>
+                    <p>Bij Tony's Chocolonely willen we een einde maken aan uitbuiting in cacao.</p>
+                    <p>Hoe meer mensen hiervoor kiezen en ons verhaal delen, hoe eerder we de industrie kunnen
+                        veranderen.</p>
+                    <p>Uiteindelijk bepaal jij, doe je mee?</p>
+                    <a href="#" class="btn-secondary">lees meer</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- section: choco voor bedrijven -->
+        <section class="business" aria-labelledby="business-title">
+            <h2 id="business-title">choco voor bedrijven</h2>
+
+            <ul>
+                <li>
+                    <img src="images/bedrijven-zeg-het-met-choco.png"
+                        alt="Voorbeelden van gepersonaliseerde bedrijfswikkels met eigen logo en tekst">
+                    <h3>zeg 't met choco</h3>
+                    <p>vertel je eigen verhaal met een eigen wikkel: met logo, tekst of persoonlijke boodschap.</p>
+                    <a href="#" class="btn-secondary">bekijk alle choco</a>
+                </li>
+                <li>
+                    <img src="images/bedrijven-giveaways.png"
+                        alt="Bedrijfsartikelen zoals een bidon, pen en mok naast een Tony's reep">
+                    <h3>zeg dag tegen saaie giveaways</h3>
+                    <p>ben jij ook het standaard bedrijfscadeau zat? Kies chocolade met een boodschap.</p>
+                    <a href="#" class="btn-secondary">ontdek zakelijke cadeaus</a>
+                </li>
+                <li>
+                    <img src="images/bedrijven-zakelijke-klant.png"
+                        alt="Illustratie van een Tony's reep, koelkast en glas melk, met de tekst 'iets lekkers erbij?'">
+                    <h3>zakelijke klant worden?</h3>
+                    <p>krijg toegang tot betalen op rekening, zakelijke prijzen en persoonlijke ondersteuning.</p>
+                    <a href="#" class="btn-secondary">meld je aan als zakelijke klant</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- section: nieuwtjes -->
+        <section class="news" aria-labelledby="news-title">
+            <h2 id="news-title">nieuwtjes</h2>
+            <p>Wil je weten waar we bij Tony's Chocolonely mee bezig zijn? Dan zit je op de juiste plek! Lees alles over
+                onze recente campagnes, impact hoogtepunten en meer.</p>
+
+            <ul>
+                <li>
+                    <img src="images/nieuws-1.png" alt="Iemand verkleed als Tony's chocoladereep op het strand">
+                    <p>
+                        <span>campagnes</span>
+                        <time datetime="2026-08-18">18 augustus 2026</time>
+                    </p>
+                    <h3>Wij gaan op wereldreis in eigen land!</h3>
+                </li>
+                <li>
+                    <img src="images/nieuws-2.png" alt="Twee kinderen lopen met cacaozakken op hun rug naar school">
+                    <p>
+                        <span>missie</span>
+                        <time datetime="2026-06-12">12 juni 2026</time>
+                    </p>
+                    <h3>de bittere realiteit op deze Dag tegen Kinderarbeid</h3>
+                </li>
+                <li>
+                    <img src="images/nieuws-3.png" alt="Illustratie van een bokaal met tekst Chocolate Scorecard">
+                    <p>
+                        <span>nieuws</span>
+                        <time datetime="2026-05-08">08 mei 2026</time>
+                    </p>
+                    <h3>DE CHOCOLATE SCORECARD IS BINNEN</h3>
+                </li>
+                <li>
+                    <img src="images/nieuws-4.png" alt="Gestapelde Filled chocoladerepen naast een verpakte reep">
+                    <p>
+                        <span>nieuws</span>
+                        <time datetime="2026-02-10">10 februari 2026</time>
+                    </p>
+                    <h3>Gloednieuw en belachelijk goed gevuld.. Filled Tony's!</h3>
+                </li>
+            </ul>
+
+            <a href="#" class="btn-secondary">lees al ons nieuws</a>
+
+        </section>
+
+        <!-- section: reviews -->
+        <section class="reviews" aria-labelledby="reviews-title">
+            <h2 id="reviews-title">wat onze fans zeggen</h2>
+
+            <ul>
+                <li>
+                    <figure>
+                        <figcaption>
+                            <p>Femke Beekman</p>
+                            <img src="images/revieuw-logo-prodeba.svg" alt="Prodeba, specialistische zorg">
+                        </figcaption>
+                        <blockquote>
+                            <p>"Het bestellen en maken van een gepersonaliseerde Tony reep is echt super makkelijk.
+                                Bedenken, ontwerpen, bekijken en bestellen...! Alles in stijl van met ons prachtige
+                                kleurrijke logo! Heel blij met het resultaat, onze collega's zijn ook enthousiast!"</p>
+                        </blockquote>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <figcaption>
+                            <p>Janneke Lommen</p>
+                            <img src="images/review-logo-hurkmans.png" alt="Hurkmans Groep">
+                        </figcaption>
+                        <blockquote>
+                            <p>"We hebben voor onze medewerkers gepersonaliseerde paaschocolade besteld. Het bestellen
+                                was makkelijk en de levering super snel! Nu lekker chocolade eten 😉"</p>
+                        </blockquote>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <figcaption>
+                            <p>Miranda van den Brink-van der Linde</p>
+                            <img src="images/review-logo-veluws-college.png" alt="Veluws College Walterbosch">
+                        </figcaption>
+                        <blockquote>
+                            <p>"Onze leerlingen en collega's weten niet beter dat wij ze graag uitdelen als attentie.
+                                Alle examenleerlingen ontvangen sowieso een gepersonaliseerde wikkel bij hun diploma en
+                                nog nooit klachten gehad 😉. Altijd lekker, altijd feestelijk en wie lust ze niet?!"</p>
+                        </blockquote>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <figcaption>
+                            <p>Nienke Kassel</p>
+                            <img src="images/review-logo-sanday.png" alt="Sanday, digitale zorgverbinders">
+                        </figcaption>
+                        <blockquote>
+                            <p>"De gepersonaliseerde repen zijn een hit bij onze klanten (en medewerkers 😉). We
+                                bestellen deze nu al een tijdje bij Tony Chocolonely. Het bestellen gaat makkelijk en we
+                                kunnen onze bestelling nu steeds simpel herhalen. We passen vaak alleen de smaken aan
+                                voor de afwisseling. Snel in huis en goede service. Wij zijn fan!"</p>
+                        </blockquote>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+        <!-- section: nieuwsbrief -->
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <h2 id="newsletter-title">serious friends worden</h2>
+            <p>word Serious Friends met ons en we houden je op de hoogte van ons laatste impact nieuws. Enne.. tuurlijk
+                laten we het ook weten wanneer er nieuwe choco aan komt!</p>
+
+            <form action="#">
+                <div>
+                    <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required>
+                    <label for="email">en je e-mailadres komt hier</label>
+                </div>
             </form>
-        </section>
-
-        <section class="store-info" aria-labelledby="store-title">
-            <h2 id="store-title">Jouw winkel</h2>
-            <p>📍 Stationsplein 13e, 1012AB Amsterdam</p>
-
-            <table class="opening-hours">
-                <caption class="visually-hidden">Openingstijden</caption>
-                <tbody>
-                    <tr><th scope="row">Maandag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Dinsdag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Woensdag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Donderdag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Vrijdag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Zaterdag</th><td>07:00 - 22:00</td></tr>
-                    <tr><th scope="row">Zondag</th><td>07:00 - 22:00</td></tr>
-                </tbody>
-            </table>
-
-            <p><a href="mailto:csgroot@dunkindonuts.nl">csgroot@dunkindonuts.nl</a></p>
-
-            <a href="#" class="btn-outline">Bestel nu →</a>
-
-            <img src="images/kaart.png" alt="Kaart met de locatie van Dunkin' bij Amsterdam Centraal Station" class="store-map">
-        </section>
-
-        <section class="perks" aria-labelledby="perks-title">
-            <h2 id="perks-title">Uw accountvoordelen</h2>
-            <p>Met een account krijg je toegang tot een scala aan geweldige voordelen</p>
-
-            <ul class="perks-list">
-                <li>
-                    <span aria-hidden="true">👤</span>
-                    <h3>Maak uw account aan</h3>
-                    <p>Maak een account aan om van de voordelen te profiteren.</p>
-                    <a href="#">Meld u gratis aan →</a>
-                </li>
-                <li>
-                    <span aria-hidden="true">⭐</span>
-                    <h3>Verdien bonuspunten</h3>
-                    <p>Ontvang bonuspunten bij elke bestelling.</p>
-                    <a href="#">Meer informatie →</a>
-                </li>
-                <li>
-                    <span aria-hidden="true">♥</span>
-                    <h3>Bewaar uw favorieten</h3>
-                    <p>Bewaar eenvoudig je favoriete items, zodat je ze altijd terug kunt vinden.</p>
-                    <a href="#">Begin met sparen →</a>
-                </li>
-            </ul>
-        </section>
-
-        <section class="socials" aria-labelledby="socials-title">
-            <h2 id="socials-title">Volg ons op</h2>
-            <ul class="social-list">
-                <li><a href="#" class="social-link facebook">Facebook</a></li>
-                <li><a href="#" class="social-link instagram">Instagram</a></li>
-                <li><a href="#" class="social-link tiktok">TikTok</a></li>
-                <li><a href="#" class="social-link linkedin">LinkedIn</a></li>
-            </ul>
-
-            <div class="app-promo">
-                <h3>Download onze app</h3>
-                <p>Houd je favoriete eten binnen handbereik.</p>
-                <a href="#"><img src="images/appstore.png" alt="Download in de App Store"></a>
-                <a href="#"><img src="images/googleplay.png" alt="Ontvang het op Google Play"></a>
-            </div>
         </section>
 
     </main>
 
-    <footer class="site-footer">
-        <img src="images/dunkin-logo.png" alt="Dunkin'" class="footer-logo">
+    <footer>
 
-        <ul class="social-list small">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
+        <nav aria-label="Footer navigatie">
+            <ul>
+                <h3>chocoshop</h3>
+                <li><a href="#">alle choco</a></li>
+                <li><a href="#">180 gram repen</a></li>
+                <li><a href="#">90 gram repen</a></li>
+                <li><a href="#">50 gram repen</a></li>
+                <li><a href="#">filled repen</a></li>
+                <li><a href="#">Tiny Tony's</a></li>
+                <li><a href="#">Lil' bits</a></li>
+            </ul>
 
-        <nav aria-label="Juridische informatie">
-            <ul class="legal-list">
-                <li><a href="#">Data privacy</a></li>
-                <li><a href="#">Impressie</a></li>
-                <li><a href="#">Algemene voorwaarden</a></li>
-                <li><a href="#">Accountbeheer</a></li>
-                <li><a href="#">Cookie instellingen</a></li>
-                <li><a href="#">Toegankelijkheidsverklaring</a></li>
+            <ul>
+                <h3>gepersonaliseerd</h3>
+                <li><a href="#">alle gepersonaliseerde choco</a></li>
+                <li><a href="#">gepersonaliseerde giveaways</a></li>
+                <li><a href="#">personaliseer een grote reep</a></li>
+                <li><a href="#">personaliseer een kleine reep</a></li>
+                <li><a href="#">pre-designed templates</a></li>
+                <li><a href="#">mijn ontwerpen</a></li>
+            </ul>
+
+            <ul>
+                <h3>over ons</h3>
+                <li><a href="#">onze belofte</a></li>
+                <li><a href="#">Tony's Impact</a></li>
+                <li><a href="#">steun onze missie</a></li>
+                <li><a href="#">vacatures</a></li>
+                <li><a href="#">nieuws</a></li>
+                <li><a href="#">Tony's Super Store</a></li>
+            </ul>
+
+            <ul>
+                <h3>contact</h3>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">bezorginformatie</a></li>
+                <li><a href="#">algemene voorwaarden</a></li>
+                <li><a href="#">verzendingsbeleid</a></li>
+                <li><a href="#">privacybeleid</a></li>
+            </ul>
+
+            <ul>
+                <h3>zakelijk</h3>
+                <li><a href="#">personaliseer repen met logo en huisstijl</a></li>
+                <li><a href="#">waarom zakelijk Tony's kopen</a></li>
+                <li><a href="#">word een zakelijke klant</a></li>
+                <li><a href="#">verkoop Tony's producten</a></li>
+                <li><a href="#">account upgraden</a></li>
             </ul>
         </nav>
 
-        <p>© 2026 Dunkin NL</p>
+        <div>
+            <div>
+                <h3>volgen doe je hier</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <img src="images/bcorp-logo.png" alt="Certified B Corporation">
+                <img src="images/fairtrade-logo.png" alt="Fairtrade keurmerk">
+            </div>
+        </div>
+
+        <p>&copy; 2026 Tony's Chocolonely</p>
+
     </footer>
 
     <script defer src="scripts/script.js"></script>
 </body>
 
 </html>
-
-
-<!-- TOEGANKELIJKHEIDSVERBETERINGEN T.O.V. ORIGINELE SITE
-
-1. Zoomen kan niet
-   - Code: geen user-scalable=no en geen maximum-scale=1 in de viewport meta-tag
-   - Resultaat: gebruikers kunnen weer normaal in- en uitzoomen
-
-2. Kan niet zien zien waar je bent als je met Tab navigeert
-   - Code: :focus-visible { outline: ... } in de CSS
-   - Resultaat: gekleurde rand om het element waar je met Tab op staat
-
-3.  Kan niet direct naar de inhoud springen zonder eerst door het hele menu te tabben
-   - Code: <a class="skip-link" href="#main">Ga naar hoofdinhoud</a> bovenaan de pagina
-   - Resultaat: 1x Tab + Enter en je slaat het hele menu over
-
-4.  Kan niet weten wat een knop met alleen een icoontje doet (bijv. 🛒) zonder de knop zien
-   - Code: aria-label="Winkelwagen, 5 items" op de knop
-   - Resultaat: screenreader zegt hardop "Winkelwagen, 5 items" i.p.v. niks
-
-5.  Kan niet weten wat er op een afbeelding staat zonder het te kunnen zien
-   - Code: alt="Kaart met de locatie van Dunkin' bij Amsterdam CS" op de <img>
-   - Resultaat: screenreader leest de tekst voor, of je ziet 'm als de afbeelding niet laadt
-
-6. screenreader kan niet weten dat de openingstijden bij elkaar horen
-   - Code: echte <table> met <th scope="row"> i.p.v. losse tekstregels
-   - Resultaat: screenreader zegt "Maandag, 07:00-22:00" als samenhangend geheel -->
