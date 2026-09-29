@@ -152,10 +152,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+- nieuwe gekozen website: https://nl.tonyschocolonely.com/
+- index.html word: https://nl.tonyschocolonely.com
+- detail.html word: https://nl.tonyschocolonely.com/products/melk-noga-47-gram?_pos=2&_sid=fcc31f42e&_ss=r
+- breakdown schets is gemaakt en staat boven.
 
 </details>
 
@@ -170,6 +170,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+- Koppen afhankelijk van JavaScript. Het origineel berekent de kopgrootte met JS (fluid-heading). → Bij mij zijn het gewone koppen die ook zonder JS werken.
+- Contrast ik heb rekening gehouden met het contrast en de tekst groter en vet of wit gemaakt waar nodig.
 
 </details>
 
@@ -199,10 +201,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - ik kan het juiste lettertype van de website niet vinden Tony's Chocolonely gebruikt de font "American Typewriter" en voor de koppen ''Chocolate letter'' maar dat is hun eigen bestand het ziet er iets anders uit dan de "American Typewriter" die ik gebruik. -> ik heb deze uiteindelijk wel gevonden
+  - de chocolade boon in het groene vak is geen img en kan ik niet downloaden, ik heb die uiteindelijk met hulp van danny gevonden. het was een svg in de code, net als de icoontjes op de site.
+  - hoe houd ik de css voor mobiel en desktop goed uit elkaar zonder dat alles verspringt na elke verandering? -> ik heb een 
+  @media (min-width: 56rem) gebruikt dus alleen op schermen van minstens 56rem. Alles daarbinnen geldt alleen op desktop. Alles daarbuiten geldt overal, en de regels in de media query overschrijven op desktop wat anders moet.
 
 </details>
 
